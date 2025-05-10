@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakir Portfolio - Contact</title>
+    <style>
+        /* Modern Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: #222; /* Dark background */
+            color: #ba4949; /* Light text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #333; /* Darker header */
+            color: #b9a6a6;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Darker shadow */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* For better responsiveness */
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #00e745; /* Dark Violet */
+            margin-bottom: 0.5rem; /* Space below title on wrap */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center; /* Center items on wrap */
+        }
+
+        header nav ul li {
+            margin-left: 25px;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #9400D3; /* Dark Violet on hover */
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 4rem 0;
+            background-color: #3e3a3a; /* Even darker background */
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem; /* Reduced margin */
+            text-align: center;
+            color: #ffffff; /* Dark Violet */
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            color: #ece1e1;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            text-align: center;
+        }
+
+        .contact-details {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+
+        .contact-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #eee;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #666; /* Darker border */
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #555; /* Darker input background */
+            color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #9400D3; /* Dark Violet focus */
+            box-shadow: 0 0 0 0.2rem rgba(148, 0, 211, 0.25); /* Dark Violet focus shadow */
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+        }
+
+        #contact .button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #555; /* Dark button background */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact .button:hover {
+            background-color: #777; /* Lighter hover */
+        }
+
+        /* Skills Display */
+        .skills-container {
+            margin-top: 3rem;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .skills-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #9400D3;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .skills-list li {
+            background-color: #444;
+            color: #eee;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222; /* Dark footer */
+            color: #ccc;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Top shadow */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            header .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .skills-list {
+                justify-content: center;
+            }
+        }
+        .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        order: -1;
+        margin-top: 1rem;
+        align-self: flex-start;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+    }
+
+    header nav.show {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jakir Portfolio</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="Jakir's Portfolio.html">Home</a></li>
+                    <li><a href="Jakir's%20Portfolio.html#about">About</a></li>
+                    <li><a href="Zakir Project.html">Projects</a></li>
+                    <li><a href="Zakir Skills.html">Skills</a></li>
+                    <li><a href="Zakir Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations or opportunities!</p>
+
+        <div class="contact-details">
+            <h3>Contact Information</h3>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/jakir_m143?igsh=MXZwbjFtcWRidjdodA==">https://www.instagram.com/jakir_m143?igsh=MXZwbjFtcWRidjdodA==</a></p>
+            <p>GitHub: <a href="https://github.com/login" target="_blank" alt="GitHub Profile">https://github.com/login</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank" alt="LinkedIn Profile">linkedin.com/in/yourprofile</a></p>
+            <p>Location: Solapur, Maharashtra, India</p>
+        </div>
+
+        <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="button">Send Message</button>
+        </form>
+
+        <div class="skills-container">
+            <h3>My Key Skills</h3>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Front-End Development</li>
+                <li>UI/UX Principles</li>
+                <li>Flutter</li>
+                <li>Dart</li>
+                <li>C++</li>
+                <li>Git & Version Control</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zakir. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector("header nav");
+            nav.classList.toggle("show");
+        }
+        </script>
+        
+</body>
+</html>

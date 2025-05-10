@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakir Portfolio - Projects</title>
+    <style>
+        /* Modern Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: #222; /* Dark background */
+            color: #eee; /* Light text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #333; /* Darker header */
+            color: #fff;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Darker shadow */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* For better responsiveness */
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #9400D3; /* Dark Violet */
+            margin-bottom: 0.5rem; /* Space below title on wrap */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center; /* Center items on wrap */
+        }
+
+        header nav ul li {
+            margin-left: 25px;
+        }
+
+        header nav ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #9400D3;
+            font-size: 1.3rem; /* Dark Violet on hover */
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 4rem 0;
+            background-color: #444; /* Even darker background */
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #9400D3; /* Dark Violet */
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 2.5rem;
+        }
+
+        .project-card {
+            background-color: #555; /* Dark card background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Darker shadow */
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #eee;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            text-decoration: none;
+            color: #1E90FF; /* Dodger Blue */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: #ADD8E6; /* Light Blue on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222; /* Dark footer */
+            color: #ccc;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Top shadow */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            header .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        order: -1;
+        margin-top: 1rem;
+        align-self: flex-start;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+    }
+
+    header nav.show {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jakir Portfolio</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="Jakir's Portfolio.html">Home</a></li>
+                    <li><a href="Jakir's%20Portfolio.html#about">About</a></li>
+                    <li><a href="Zakir Project.html">Projects</a></li>
+                    <li><a href="Zakir Skills.html">Skills</a></li>
+                    <li><a href="Zakir Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="\my project portfolio1\images\Zakir Image\Screenshot 2025-05-08 155843.png" alt="Project 1">
+                <h3>My Portfolio</h3>
+                <p>My Portfoo using HTM CSS & JavaScript.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="https://github.com/login" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="\my project portfolio1\images\Zakir Image\clipart52816 (1).png" alt="Project 2">
+                <h3>Demo of Javascript</h3>
+                <p>My first Demo.</p>
+                <div class="project-links">
+                    <a href="https://github.com/jakirmujawar/Javascriptcode1" target="_blank">Live Demo</a>
+                    <a href="https://github.com/login" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            </div>
+    
+<p>The development of this project has been a  iterative, collaborative effort focused on HTM CSS, JavaScript & many other things. Moving forward, we plan to outline future enhancements. We are committed to continuously improving this section based on user feedback and evolving needs, ensuring it remains a valuable resource within our website.
+
+</p>
+</section>
+    <footer>
+        <div class="container">
+            <p>&copy; [2025] Zakir. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector("header nav");
+            nav.classList.toggle("show");
+        }
+        </script>
+        
+</body>
+</html>
